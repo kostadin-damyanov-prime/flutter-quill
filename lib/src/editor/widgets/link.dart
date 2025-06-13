@@ -215,7 +215,8 @@ class _CupertinoAction extends StatelessWidget {
             Icon(
               icon,
               size: theme.iconTheme.size,
-              color: theme.colorScheme.onSurface.withValues(alpha: 0.75),
+              color:
+                  theme.colorScheme.onSurface.withAlpha((0.75 * 255).toInt()),
             )
           ],
         ),
@@ -273,7 +274,7 @@ class _MaterialAction extends StatelessWidget {
       leading: Icon(
         icon,
         size: theme.iconTheme.size,
-        color: theme.colorScheme.onSurface.withValues(alpha: 0.75),
+        color: theme.colorScheme.onSurface.withAlpha((0.75 * 255).toInt()),
       ),
       title: Text(title),
       onTap: onPressed,

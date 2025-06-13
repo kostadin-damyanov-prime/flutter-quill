@@ -176,40 +176,40 @@ class EditableTextBlock extends StatelessWidget {
     for (final line in Iterable.castFrom<dynamic, Line>(block.children)) {
       index++;
       final editableTextLine = EditableTextLine(
-        line,
-        _buildLeading(
-          context: context,
-          line: line,
-          index: index,
-          indentLevelCounts: indentLevelCounts,
-          count: count,
-        ),
-        TextLine(
-          line: line,
-          textDirection: textDirection,
-          embedBuilder: embedBuilder,
-          textSpanBuilder: textSpanBuilder,
-          customStyleBuilder: customStyleBuilder,
-          styles: styles!,
-          readOnly: readOnly,
-          controller: controller,
-          linkActionPicker: linkActionPicker,
-          onLaunchUrl: onLaunchUrl,
-          customLinkPrefixes: customLinkPrefixes,
-          customRecognizerBuilder: customRecognizerBuilder,
-          composingRange: composingRange,
-        ),
-        indentWidthBuilder(block, context, count, numberPointWidthBuilder),
-        _getSpacingForLine(line, index, count, defaultStyles),
-        textDirection,
-        textSelection,
-        color,
-        enableInteractiveSelection,
-        hasFocus,
-        MediaQuery.devicePixelRatioOf(context),
-        cursorCont,
-        styles!.inlineCode!,
-        null);
+          line,
+          _buildLeading(
+            context: context,
+            line: line,
+            index: index,
+            indentLevelCounts: indentLevelCounts,
+            count: count,
+          ),
+          TextLine(
+            line: line,
+            textDirection: textDirection,
+            embedBuilder: embedBuilder,
+            textSpanBuilder: textSpanBuilder,
+            customStyleBuilder: customStyleBuilder,
+            styles: styles!,
+            readOnly: readOnly,
+            controller: controller,
+            linkActionPicker: linkActionPicker,
+            onLaunchUrl: onLaunchUrl,
+            customLinkPrefixes: customLinkPrefixes,
+            customRecognizerBuilder: customRecognizerBuilder,
+            composingRange: composingRange,
+          ),
+          indentWidthBuilder(block, context, count, numberPointWidthBuilder),
+          _getSpacingForLine(line, index, count, defaultStyles),
+          textDirection,
+          textSelection,
+          color,
+          enableInteractiveSelection,
+          hasFocus,
+          MediaQuery.devicePixelRatioOf(context),
+          cursorCont,
+          styles!.inlineCode!,
+          null);
       final nodeTextDirection = getDirectionOfNode(line, textDirection);
       children.add(
         Directionality(
@@ -293,7 +293,8 @@ class EditableTextBlock extends StatelessWidget {
           return null;
         }
         return defaultStyles.code!.style.copyWith(
-          color: defaultStyles.code!.style.color!.withValues(alpha: 0.4),
+          color:
+              defaultStyles.code!.style.color!.withAlpha((0.4 * 255).toInt()),
         );
       }(),
       width: () {
